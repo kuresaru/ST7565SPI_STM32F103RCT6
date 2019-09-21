@@ -1,0 +1,45 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+	{
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "targetArchitecture": "arm",
+            "program": "${workspaceFolder}/build/STM32F103RCT6.elf",
+            "args": [""],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:/DevTools/Sourcery G++ Lite/bin/arm-none-eabi-gdb.exe",
+            "miDebuggerServerAddress": "localhost:3333",
+            "customLaunchSetupCommands": [
+                {"text": "target remote localhost:3333"},
+                {"text": "monitor halt"},
+                {"text": "file D:/Things/MCU/Projects/${workspaceRootFolderName}/build/STM32F103RCT6.elf"},
+                {"text": "load"},
+                {"text": "monitor reset"}
+            ],
+            "preLaunchTask": "build"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/STM32F103RCT6.elf",
+            "name": "Cortex Debug",
+            "device": "STM32F103x8",
+            "configFiles": [
+                "${workspaceRoot}/openocd/stlink-v2.cfg",
+                "${workspaceRoot}/openocd/stm32f1x.cfg"
+            ],
+            "showDevDebugOutput": true
+        }
+    ]
+}

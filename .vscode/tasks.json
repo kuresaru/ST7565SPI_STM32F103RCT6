@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "flash",
+            "type": "shell",
+            "command": "STVP_CmdLine.exe -BoardName=ST-LINK -Port=USB -ProgMode=SWD -Device=STM32F103xC -no_loop -erase -FileProg=${workspaceFolder}/build/STM32F103RCT6.hex",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cs-make",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm -r build",
+            "problemMatcher": []
+        }
+    ]
+}

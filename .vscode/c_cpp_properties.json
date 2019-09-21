@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:/DevTools/GNU Tools ARM Embedded/4.7 2013q1/arm-none-eabi/include/*",
+                "${workspaceFolder}/Libs/inc/*",
+                "${workspaceFolder}/Libs/*",
+                "${workspaceFolder}/User/*"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USE_STDPERIPH_DRIVER",
+                "STM32F10X_HD"
+            ],
+            "compilerPath": "D:/DevTools/GNU Tools ARM Embedded/4.7 2013q1/bin/arm-none-eabi-gcc.exe",
+            "cStandard": "c11",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
